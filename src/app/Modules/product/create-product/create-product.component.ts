@@ -179,6 +179,8 @@ export class CreateProductComponent implements OnInit {
       this.product.images.forEach((image: any) => {
         this.imageService.deleteImage(image.image_id).subscribe();
       })
+      this.images = [];
+      this.imagesLinks = [];
     }
   }
 

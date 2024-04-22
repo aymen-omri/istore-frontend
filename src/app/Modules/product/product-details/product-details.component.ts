@@ -4,6 +4,7 @@ import { LightGallery } from 'lightgallery/lightgallery';
 import { ProductService } from 'src/app/Utils/Services/Product.service';
 import lgZoom from 'lightgallery/plugins/zoom'
 import { InitDetail } from 'lightgallery/lg-events';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class ProductDetailsComponent implements OnInit {
     this.findProductById();
   }
 
-  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+  constructor(private route: ActivatedRoute, private productService: ProductService, private sanitizer: DomSanitizer) { }
 
   id_product: number = 0;
   product: any;
@@ -47,7 +48,7 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.getProductById(this.id_product).subscribe((data: any) => {
       this.product = data;
       this.images = this.product.images;
-      if(this.images){
+      if (this.images) {
         this.selectedImage = this.images[0];
       }
     });
@@ -75,6 +76,12 @@ export class ProductDetailsComponent implements OnInit {
     const container = document.querySelector('.others');
     if (container) {
       container.scrollLeft += this.stepSize;
+    }
+  }
+
+  redirectToBuyLink(buyLink: string | undefined): void {
+    if (buyLink) {
+      window.location.href = buyLink;
     }
   }
 
