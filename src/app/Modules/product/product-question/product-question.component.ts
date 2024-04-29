@@ -15,6 +15,7 @@ export class ProductQuestionComponent implements OnInit {
 
   products: any[] = [];
   id_question: number = 0;
+  
 
   constructor(private route: ActivatedRoute, private productService: ProductService) { }
 

@@ -25,14 +25,10 @@ export class ProductDetailsComponent implements OnInit {
   product: any;
   images: any[] | undefined;
   private lightGallery!: LightGallery;
-  private needRefresh = false;
   selectedImage: any;
 
   ngAfterViewChecked(): void {
-    if (this.needRefresh) {
-      this.lightGallery.refresh();
-      this.needRefresh = false;
-    }
+    this.lightGallery.refresh();
   }
   settings = {
     counter: false,

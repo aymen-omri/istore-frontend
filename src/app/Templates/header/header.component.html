@@ -1,9 +1,19 @@
 <mat-toolbar color="primary" class="mat-elevation-z8">
   <img src="../../../assets/appletv-removebg-preview.png" alt="" routerLink="" style="width: 25px;cursor:pointer">
-  <span class="example-spacer"></span>
-  <button mat-button routerLink="product/question-ask" style="margin-right: 7px;">Questions</button>
-  <button mat-raised-button style="background-color: transparent;color:white;border:1px solid white;" routerLink="/auth/login" *ngIf="!isLoggedIn">
-    <mat-icon>login</mat-icon> Login
+  <div class="menu">
+    <button mat-button routerLink="product/question-ask" style="margin-right: 7px;">Questions</button>
+    <button mat-button routerLink="product/product-budget" style="margin-right: 7px;">Budget</button>
+    <button mat-button style="margin-right: 7px;"
+      (click)="redirectToBuyLink('https://www.apple.com/tn/mac/')">Mac</button>
+    <button mat-button style="margin-right: 7px;"
+      (click)="redirectToBuyLink('https://www.apple.com/tn/ipad/')">iPad</button>
+    <button mat-button style="margin-right: 7px;"
+      (click)="redirectToBuyLink('https://www.apple.com/tn/iphone/')">iPhone</button>
+  </div>
+
+  <button mat-raised-button style="background-color: transparent;color:white;border:1px solid white;"
+    routerLink="/auth/login" *ngIf="!isLoggedIn">
+   Login
   </button>
 
   <!--Menu-->
@@ -11,8 +21,8 @@
     <!-- Image Button -->
     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
       aria-haspopup="true" aria-expanded="false">
-      <img src="https://hub.alfresco.com/legacyfs/online/alfresco/a12790_user-86426-avatar"
-        alt="Admin" class="rounded-circle" style="width: 40px; height: 40px;">
+      <img src="https://hub.alfresco.com/legacyfs/online/alfresco/a12790_user-86426-avatar" alt="Admin"
+        class="rounded-circle" style="width: 40px; height: 40px;">
     </button>
 
     <!-- Dropdown Menu -->

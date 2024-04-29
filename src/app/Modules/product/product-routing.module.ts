@@ -8,12 +8,14 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductListComponent } from './product-list/product-list.component';
 import { IsAuthGuard } from 'src/app/Utils/Guards/is-auth.guard';
 import { IsAdminGuard } from 'src/app/Utils/Guards/is-admin.guard';
+import { ProductBudgetComponent } from './product-budget/product-budget.component';
 
 const routes: Routes = [
   { path: 'questions', component: QuestionListComponent, canActivate: [IsAuthGuard, IsAdminGuard] },
   { path: 'create', component: CreateProductComponent, canActivate: [IsAuthGuard, IsAdminGuard] },
   { path: 'create/:id', component: CreateProductComponent, canActivate: [IsAuthGuard, IsAdminGuard] },
   { path: 'question-ask', component: QuestionAskComponent },
+  { path: 'product-budget', component: ProductBudgetComponent },
   { path: 'product-question/:id', component: ProductQuestionComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent },
   { path: 'product-list', component: ProductListComponent, canActivate: [IsAuthGuard, IsAdminGuard] }

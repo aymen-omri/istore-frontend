@@ -27,5 +27,11 @@ export class HeaderComponent implements OnInit {
     location.reload();
   }
 
+  redirectToBuyLink(buyLink: string | undefined): void {
+    if (buyLink) {
+      window.location.href = buyLink;
+    }
+  }
+
 
 }

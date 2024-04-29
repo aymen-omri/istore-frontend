@@ -59,6 +59,7 @@ export class CreateProductComponent implements OnInit {
       speed: [''],
       corsNumber: [''],
       ram: [''],
+      storage:[''],
       batteryCapacity: [''],
       operatingSystem: [''],
       size: [''],
@@ -104,7 +105,8 @@ export class CreateProductComponent implements OnInit {
         backResol: this.product.camera.backResol,
         frontResol: this.product.camera.frontResol,
         questionId: this.product.question.question_id,
-        buyLink: this.product.buyLink
+        buyLink: this.product.buyLink,
+        storage : this.product.storage
       });
       this.connectivityIds = this.product.connectivityOptions.map((con: any) => con.id);
       this.selected = this.product.connectivityOptions;
@@ -223,7 +225,8 @@ export class CreateProductComponent implements OnInit {
         },
         questionId: this.productForm.value.questionId, // Assuming this field represents the selected connectivity options
         connectivityIds: this.connectivityIds,
-        buyLink: this.productForm.value.buyLink
+        buyLink: this.productForm.value.buyLink,
+        storage : this.productForm.value.storage
       }
       console.log(productRequest)
       this.productService.saveProduct(productRequest).subscribe({
@@ -270,7 +273,8 @@ export class CreateProductComponent implements OnInit {
         },
         questionId: this.productForm.value.questionId, // Assuming this field represents the selected connectivity options
         connectivityIds: this.connectivityIds,
-        buyLink: this.productForm.value.buyLink
+        buyLink: this.productForm.value.buyLink,
+        product:this.productForm.value.storage
       }
       console.log(productRequest)
       this.productService.updateProduct(productRequest, this.id_product).subscribe({

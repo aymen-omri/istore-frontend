@@ -17,6 +17,9 @@ import { GalleriaModule } from 'primeng/galleria';
 import { ProductListComponent } from './product-list/product-list.component';
 import {TableModule} from 'primeng/table';
 import { LightgalleryModule } from 'lightgallery/angular';
+import { ProductBudgetComponent } from './product-budget/product-budget.component';
+import { SliderModule } from 'primeng/slider';
+
 
 
 @NgModule({
@@ -28,6 +31,7 @@ import { LightgalleryModule } from 'lightgallery/angular';
     ProductQuestionComponent,
     ProductDetailsComponent,
     ProductListComponent,
+    ProductBudgetComponent
   ],
   imports: [
     CommonModule,
@@ -40,6 +44,7 @@ import { LightgalleryModule } from 'lightgallery/angular';
     GalleriaModule,
     TableModule,
     LightgalleryModule,
+    SliderModule
   ]
 })
 export class ProductModule { }

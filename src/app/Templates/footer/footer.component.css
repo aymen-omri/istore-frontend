@@ -1,1 +1,17 @@
+a{
+    text-decoration: none;
+    color: white;
+}
 
+.text-uppercase{
+    font-size: 1.1em;
+}
+
+.last{
+    border-top: 1px solid white;
+
+}
+
+footer{
+    background-color: rgb(26, 25, 25);
+}
